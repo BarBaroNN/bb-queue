@@ -1,0 +1,43 @@
+[  
+    {
+	    "type": "AdaptiveCard",
+	    "minHeight": "100px",
+	    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+	    "version": "1.2",
+	    "body": [
+	        {
+	            "type": "TextBlock",
+	            "text": "RealisticLife",
+	            "fontType": "Default",
+	            "horizontalAlignment": "Center",
+	            "weight": "Bolder",
+	            "color": "Accent",
+	            "size": "ExtraLarge"
+	        },
+	        {
+	            "type": "TextBlock",
+	            "text": "[1] barbaroNN (barbar0NN#0006) | 1000 Queue Points",
+	            "color": "Light",
+	            "fontType": "Default",
+	            "weight": "Bolder"
+	        },
+	        {
+	            "type": "TextBlock",
+	            "text": "Queue Length: 10",
+	            "color": "Accent",
+	            "spacing": "Small",
+	            "horizontalAlignment": "Center",
+	            "weight": "Bolder"
+	        },
+	        {
+	            "type": "TextBlock",
+	            "text": "Reserve your queue place now!",
+	            "horizontalAlignment": "Center",
+	            "weight": "Bolder",
+	            "color": "Accent",
+	            "size": "Small",
+	            "spacing": "Small"
+	        }
+	    ]
+	}
+]
