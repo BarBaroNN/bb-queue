@@ -1,22 +1,21 @@
 Config = {}
 
 local Prefix = "[barbaroNNs Queue] "
-Config.License = "" -- Enter your license key here.
-Config.ServerName = "" -- Enter your server name.
-Config.DiscordServerID = 1111111111111111 -- Change To Your Server ID
-Config.DiscordBotToken = "CHANGEME" -- Discord Bot Token. You can create one on https://discord.com/developers/applications
-Config.ApiLink = "" -- If you are using API.
-Config.ApiKey = ""
-Config.maxServerSlots = 1
+Config.DiscordServerID = 123123123 -- Discord Server ID
+Config.DiscordBotToken = "TOKEN" -- Discord Bot Token. You can create one on https://discord.com/developers/applications
+Config.ApiLink = "" -- API Stuff
+Config.ApiKey = ""-- API Stuff
+Config.maxServerSlots = 32
+
 Config.Roles = {
 	Example = {
-		roleID = "111111111111111111",
+		roleID = "123123123123",
 		points = 10,
 		name = "Staff Member"
 	},
 
 	Example2 = {
-		roleID = "222222222222222222",
+		roleID = "123123123123",
 		points = 15,
 		name = "Donator"
 	},
