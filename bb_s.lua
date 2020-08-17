@@ -64,10 +64,9 @@ function ProccessQueue(steamID, discordID, d, _source)
         	        localdec = tostring(v)
         	    end
         	end
-        	data.name = localname .. "#" .. tostring(localdec)
-        	if memberRoleNames == "" then
-				memberRoleNames = "Member"
-        	end
+			data.name = localname .. "#" .. tostring(localdec)
+			memberRoleNames = memberRoleNames ~= "" and memberRoleNames or "Member"
+
 
         	AddPlayer(steamID, discordID, data.name, data.queuepts, memberRoleNames, _source, d)
 		else
@@ -97,7 +96,8 @@ function ProccessQueue(steamID, discordID, d, _source)
 	
         d.done()
 		return true
-    end, "GET", "", {["Content-type"] = "application/json", ["Authorization"] = "Bot " .. Config.DiscordBotToken})
+	end, "GET", "", {["Content-type"] = "application/json", ["Authorization"] = "Bot " .. Config.DiscordBotToken})
+	return false
 end
 
 AddEventHandler("playerDropped", function(reason)
