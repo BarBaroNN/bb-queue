@@ -38,38 +38,42 @@ end)
 
 function ProccessQueue(steamID, discordID, d, _source)
     local data = {name = nil, queuepts = 0}
-    PerformHttpRequest("https://discordapp.com/api/guilds/" .. Config.DiscordServerID .. "/members/"..string.sub(discordID, 9), function(err, text, headers) 
-        local member = json.decode(text)
-        local memberRoleNames, memberRoleNamesCounter = '', 0
-        for a, b in ipairs(member.roles) do
-            for _, roleData in pairs(Config.Roles) do
-                if b == roleData.roleID then
-                    data.queuepts = data.queuepts + roleData.points
-                    if memberRoleNamesCounter == 0 then
-                    	memberRoleNames = roleData.name
-                    	memberRoleNamesCounter = memberRoleNamesCounter + 1
-                    else
-                    	memberRoleNames = memberRoleNames .. ' & ' .. roleData.name
-                    end
-                end
-            end
-        end
+	PerformHttpRequest("https://discordapp.com/api/guilds/" .. Config.DiscordServerID .. "/members/"..string.sub(discordID, 9), function(err, text, headers) 
+		if text ~= nil then
+        	local member = json.decode(text)
+        	local memberRoleNames, memberRoleNamesCounter = '', 0
+        	for a, b in ipairs(member.roles) do
+        	    for _, roleData in pairs(Config.Roles) do
+        	        if b == roleData.roleID then
+        	            data.queuepts = data.queuepts + roleData.points
+        	            if memberRoleNamesCounter == 0 then
+        	            	memberRoleNames = roleData.name
+        	            	memberRoleNamesCounter = memberRoleNamesCounter + 1
+        	            else
+        	            	memberRoleNames = memberRoleNames .. ' & ' .. roleData.name
+        	            end
+        	        end
+        	    end
+        	end
 
-        local localname, localdec = "", ""
-        for k, v in pairs(member.user) do
-            if k == "username" then
-                localname = v
-            elseif k == "discriminator" then
-                localdec = tostring(v)
-            end
-        end
-        data.name = localname .. "#" .. tostring(localdec)
-        if memberRoleNames == "" then
-        	memberRoleNames = "Member"
-        end
+        	local localname, localdec = "", ""
+        	for k, v in pairs(member.user) do
+        	    if k == "username" then
+        	        localname = v
+        	    elseif k == "discriminator" then
+        	        localdec = tostring(v)
+        	    end
+        	end
+        	data.name = localname .. "#" .. tostring(localdec)
+        	if memberRoleNames == "" then
+				memberRoleNames = "Member"
+        	end
 
-        AddPlayer(steamID, discordID, data.name, data.queuepts, memberRoleNames, _source, d)
-
+        	AddPlayer(steamID, discordID, data.name, data.queuepts, memberRoleNames, _source, d)
+		else
+        	AddPlayer(steamID, discordID, "Not Found", 0, "None", _source, d)
+		end
+		
         local stop = false
         repeat
         	for k, v in pairs(connectingInfo) do
@@ -90,9 +94,9 @@ function ProccessQueue(steamID, discordID, d, _source)
             d.presentCard(currentMessage, function(data, rawData) end)
             Wait(0)
         until stop
-        
+	
         d.done()
-        return true
+		return true
     end, "GET", "", {["Content-type"] = "application/json", ["Authorization"] = "Bot " .. Config.DiscordBotToken})
 end
 
