@@ -64,6 +64,7 @@ function ProccessQueue(steamID, discordID, d, _source)
         	        localdec = tostring(v)
         	    end
         	end
+				
 			data.name = localname .. "#" .. tostring(localdec)
 			memberRoleNames = memberRoleNames ~= "" and memberRoleNames or "Member"
 
