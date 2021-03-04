@@ -5,7 +5,7 @@ Config.DiscordServerID = 123123123 -- Discord Server ID
 Config.DiscordBotToken = "TOKEN" -- Discord Bot Token. You can create one on https://discord.com/developers/applications
 Config.ApiLink = "" -- API Stuff
 Config.ApiKey = ""-- API Stuff
-Config.maxServerSlots = 0
+Config.maxServerSlots = 32
 
 -- if you dont want buttons or want just one just leave blank all 3 sections.
 Config.ButtonTitle = "" -- The First Button Title (leave it blank if you dont want button)
