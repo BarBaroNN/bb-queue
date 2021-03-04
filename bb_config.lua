@@ -1,11 +1,19 @@
 Config = {}
 
 local Prefix = "[barbaroNNs Queue] "
-Config.DiscordServerID = 123123123 -- Discord Server ID
-Config.DiscordBotToken = "TOKEN" -- Discord Bot Token. You can create one on https://discord.com/developers/applications
+Config.DiscordServerID = 731610305666482227 -- Discord Server ID
+Config.DiscordBotToken = "NjcwNTYyNjQzNjkzNjY2MzE0.XiwMIA.TadVzyT8zGrL1D9i3sOE7imHv78" -- Discord Bot Token. You can create one on https://discord.com/developers/applications
 Config.ApiLink = "" -- API Stuff
 Config.ApiKey = ""-- API Stuff
-Config.maxServerSlots = 32
+Config.maxServerSlots = 0
+
+-- if you dont want buttons or want just one just leave blank all 3 sections.
+Config.ButtonTitle = "" -- The First Button Title (leave it blank if you dont want button)
+Config.ButtonUrl = "" -- The First Button URL
+Config.ButtonIcon = "" -- The First Button Icon (leave it blank if you don't want Icon)
+Config.Button2Title = "" -- The Second Button Title (leave it blank if you dont want button)
+Config.Button2Url = "" -- The Second Button URL
+Config.Button2Icon = "" -- The Second Button Icon (leave it blank if you don't want Icon)
 
 Config.Roles = {
 	Example = {
