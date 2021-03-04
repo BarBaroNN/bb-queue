@@ -1,43 +1,66 @@
-[  
-    {
-	    "type": "AdaptiveCard",
-	    "minHeight": "100px",
-	    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-	    "version": "1.2",
-	    "body": [
-	        {
-	            "type": "TextBlock",
-	            "text": "RealisticLife",
-	            "fontType": "Default",
-	            "horizontalAlignment": "Center",
-	            "weight": "Bolder",
-	            "color": "Accent",
-	            "size": "ExtraLarge"
-	        },
-	        {
-	            "type": "TextBlock",
-	            "text": "[1] barbaroNN (barbar0NN#0006) | 1000 Queue Points",
-	            "color": "Light",
-	            "fontType": "Default",
-	            "weight": "Bolder"
-	        },
-	        {
-	            "type": "TextBlock",
-	            "text": "Queue Length: 10",
-	            "color": "Accent",
-	            "spacing": "Small",
-	            "horizontalAlignment": "Center",
-	            "weight": "Bolder"
-	        },
-	        {
-	            "type": "TextBlock",
-	            "text": "Reserve your queue place now!",
-	            "horizontalAlignment": "Center",
-	            "weight": "Bolder",
-	            "color": "Accent",
-	            "size": "Small",
-	            "spacing": "Small"
-	        }
-	    ]
-	}
+[
+  {
+    "type": "AdaptiveCard",
+    "minHeight": "130px",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3",
+    "body": [
+      {
+        "type": "TextBlock",
+        "text": "RealisticLife",
+        "fontType": "Default",
+        "horizontalAlignment": "Center",
+        "weight": "Bolder",
+        "color": "Accent",
+        "size": "ExtraLarge"
+      },
+      {
+        "type": "TextBlock",
+        "text": "[1] barbaroNN (barbar0NN#0006) | 1000 Queue Points",
+        "color": "Light",
+        "fontType": "Default",
+        "weight": "Bolder"
+      },
+      {
+        "type": "TextBlock",
+        "text": "Queue Length: 10",
+        "color": "Accent",
+        "spacing": "Small",
+        "horizontalAlignment": "Center",
+        "weight": "Bolder"
+      },
+      {
+        "type": "TextBlock",
+        "text": "Reserve your queue place now!",
+        "horizontalAlignment": "Center",
+        "weight": "Bolder",
+        "color": "Accent",
+        "size": "Small",
+        "spacing": "Small"
+      },
+      {
+        "type": "TextBlock",
+        "text": "\r",
+        "horizontalAlignment": "Center",
+        "weight": "Bolder",
+        "spacing": "padding"
+      }
+    ],
+    "actions": [
+      {
+        "type": "Action.OpenUrl",
+        "title": "barbaronn",
+        "url": "https://www.barbaronn.shop/",
+        "iconUrl": "",
+        "style": "positive"
+      },
+      {
+        "type": "Action.OpenUrl",
+        "title": "Barbaronn",
+        "url": "https://www.barbaronn.shop/",
+        "iconUrl": "",
+        "style": "positive"
+      }
+    ]
+  }
 ]
