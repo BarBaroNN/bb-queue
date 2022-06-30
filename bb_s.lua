@@ -244,6 +244,31 @@ function GetMessage()
     cardd.body[2].text = msg
     cardd.body[3].text = "Queue Length: " .. tostring(#playersInfo) .. " | Player Count: " .. #GetPlayers() .. "/" .. Config.maxServerSlots
 
+	cardd.actions[1].title = Config.ButtonTitle
+	cardd.actions[1].url = Config.ButtonUrl
+	cardd.actions[1].iconUrl = Config.ButtonIcon
+	
+	cardd.actions[2].title = Config.Button2Title
+	cardd.actions[2].url = Config.Button2Url
+	cardd.actions[2].iconUrl = Config.Button2Icon
+
+
+	--remove the first button if config is empty
+	if Config.ButtonTitle == "" or nil and Config.ButtonIcon == "" or nil and Config.ButtonUrl == "" or nil then
+				cardd.actions[1].type = ""
+	end
+
+	--remove the second button if config is empty
+	if Config.Button2Title == "" or nil and Config.Button2Icon == "" or nil and Config.Button2Url == "" or nil then
+				cardd.actions[2].type = ""
+	end
+
+	--remove the whitespace if both button configs is empty
+	if Config.ButtonTitle == "" or nil and Config.ButtonIcon == "" or nil and Config.ButtonUrl == "" or nil and Config.Button2Title == "" or nil and Config.Button2Icon == "" or nil and Config.Button2Url == "" or nil then
+		cardd.body[5].text = ""
+	end
+
+
     if not ColorsTimeout then
     	startColorTimeout()
     	local changedColor = false
